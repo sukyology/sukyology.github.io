@@ -1,27 +1,16 @@
 baseURL = "https://sukyology.github.io/"
-languageCode = "en-us"
+languageCode = "ko-kr"
 title = "sukyology"
-theme = "ananke"
+
 resourceDir = "../resources"
 
-
-DefaultContentLanguage = "en"
+DefaultContentLanguage = "ko"
 SectionPagesMenu = "main"
 Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
 googleAnalytics = ""
 enableRobotsTXT = true
 #disqusShortname = "sukyology.github.io"
 
-
-#[languages]
-#[languages.en]
-#title = "My blog"
-#weight = 1
-#contentDir = "content/en"
-#[languages.fr]
-#title = "Mon blogue"
-#weight = 2
-#contentDir = "content/fr"
 
 [sitemap]
 changefreq = "monthly"
