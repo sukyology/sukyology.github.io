@@ -1,7 +1,7 @@
 baseURL = "https://sukyology.github.io/"
 languageCode = "ko-kr"
 title = "sukyology"
-
+theme = "ananke"
 resourceDir = "../resources"
 
 DefaultContentLanguage = "ko"

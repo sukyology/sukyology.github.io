@@ -52,3 +52,9 @@ async>
 ![img.png](img.png)
 댓글 쓰기 기능이 생긴다. 
 
+> 댓글 기능 추가하느라 고생한 부분이 있는데... 
+> theme을 적용할 경우, 해당 theme에서 제공하는 layout을 
+> override 해야 한다. 대부분 게시글에 대한 layout은 /theme/{theme_name}/layouts/_default/single.html 파일로 저장되는 것 같다. 
+> /theme/{theme_name}만 빼고 나머지 파일 경로는 겹치게 해서 생성하면 해당 파일이 theme layout을 override한다. 
+> 해당 파일에 내용을 작성하거나 수정하면 그대로 반영이 된다. 주의할 것은 처음 override할 때는 반드시 서버를 내렸다 올려야 적용이 된다.
+
