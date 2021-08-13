@@ -7,7 +7,7 @@ resourceDir = "../resources"
 DefaultContentLanguage = "ko"
 SectionPagesMenu = "main"
 Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
-googleAnalytics = ""
+googleAnalytics = "282819216"
 enableRobotsTXT = true
 #disqusShortname = "sukyology.github.io"
 
