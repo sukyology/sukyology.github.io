@@ -7,6 +7,7 @@ resourceDir = "../resources"
 DefaultContentLanguage = "ko"
 SectionPagesMenu = "main"
 Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
+googleAnalytics = "G-TDR87VQY72"
 enableRobotsTXT = true
 #disqusShortname = "sukyology.github.io"
 
@@ -17,6 +18,7 @@ priority = 0.5
 filename = "sitemap.xml"
 
 [params]
+env="production"
 favicon = ""
 site_logo = ""
 description = "석교의 블로그"
