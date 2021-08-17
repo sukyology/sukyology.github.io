@@ -1,6 +1,6 @@
 ---
 title: "kotlin-spring 간단한 통합 테스트 설정"
-date: 2021-08-17T20:27:27+09:00
+date: 2021-08-17T08:27:27+09:00
 draft: false
 ---
 
