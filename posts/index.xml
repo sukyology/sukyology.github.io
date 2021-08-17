@@ -3,7 +3,7 @@
 theme 이 없다는 가정하에 다음과 같이 적용할 수 있다.
 &amp;lt;head&amp;gt;엘레멘트가 있는 layout html파일에 {{ template &amp;quot;_internal/google_analytics.html&amp;quot; . }} 을 적용하고, 설정파일(.toml 이라고 가정) 에 googleAnalytics = &amp;lt;구글_애널리틱스_속성_ID&amp;gt; 를 입력하면 끝이다.
 그럼에도 몇가지 삽질을 했다.
-theme에서 {{ template &amp;quot;_internal/google_analytics.html&amp;quot; . }}을 적용할 때 production에서만 적용하도록 분기문이 적용되어 있었다. 내가 쓰는 ananke에서 production 판별 조건 중 하나가 HUGO_ENV=production이었는데, HUGO cli에서 -e 로 세팅할 수 있는 줄 알았는데, 아니었다.</description></item><item><title>신입은 언제 질문을 해야 하는 걸까?</title><link>https://sukyology.github.io/posts/my-first-post/</link><pubDate>Sat, 07 Aug 2021 20:27:27 +0900</pubDate><guid>https://sukyology.github.io/posts/my-first-post/</guid><description>신입은 언제 질문을 해야 하는 걸까요? 인터넷에서 종종 보는 질문입니다.
+theme에서 {{ template &amp;quot;_internal/google_analytics.html&amp;quot; . }}을 적용할 때 production에서만 적용하도록 분기문이 적용되어 있었다. 내가 쓰는 ananke에서 production 판별 조건 중 하나가 HUGO_ENV=production이었는데, HUGO cli에서 -e 로 세팅할 수 있는 줄 알았는데, 아니었다.</description></item><item><title>신입은 언제 질문을 해야 하는 걸까?</title><link>https://sukyology.github.io/posts/when_should_beginner_ask/</link><pubDate>Sat, 07 Aug 2021 20:27:27 +0900</pubDate><guid>https://sukyology.github.io/posts/when_should_beginner_ask/</guid><description>신입은 언제 질문을 해야 하는 걸까요? 인터넷에서 종종 보는 질문입니다.
 A: 사수가 질문을 듣고 기분이 안나빠질 때&amp;hellip;
 는 농담이고&amp;hellip; 이 질문을 바꿔 말하면, 얼마나 고민 하고 질문을 해야 하는 건가요? 가 됩니다.
 당연하게도, 각자의 선호도는 있을 지언정 명확한 기준은 없습니다. 그러니까 논쟁이 되는 거겠죠. 하지만, 단순히 케바케라는 일반적인 결론을 내기에는 내가 모르는 것에 대해서 얼마나 생각해 봐야 하나&amp;hellip; 는 중요한 주제이고, 신입으로 조직 생활을 해 나가기 위해 자신만의 답이 필요합니다.</description></item></channel></rss>
