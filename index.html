@@ -71,6 +71,28 @@ sukyology
 <div class="flex flex-column flex-row-ns">
 <div class="blah w-100">
 <h1 class="f3 fw1 athelas mt0 lh-title">
+<a href=/posts/spring_integration_test_ex/ class="color-inherit dim link">
+kotlin-spring 간단한 통합 테스트 설정
+</a>
+</h1>
+<div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+기존 상황 로컬 DB를 사용하여 스프링 통합 테스트를 하고 있었다.
+개발망에 서버를 올리고, 추가적인 테스트를 하고 있었다.
+목적 코너케이스나 데이터 정합성까진 아니더라도 기본적인 api의 동작 여부는 코드가 변경될 때 마다 자동으로 체크하고 싶다.
+해결 방법 db의 멱등성 부여 docker container를 테스트마다 생성함. 자동으로 체크 github actions를 통해 풀리퀘나 푸시가 일어날 때 마다 테스트코드 실행 api 동작 여부 체크 testResttemplate으로 실행 spring 서버에 api 요청 구체적인 설정 dependency 설정 build.
+</div>
+<a href=/posts/spring_integration_test_ex/ class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+</div>
+</div>
+</div>
+</article>
+</div>
+<div class="relative w-100 mb4">
+<article class="bb b--black-10">
+<div class="db pv4 ph3 ph0-l no-underline dark-gray">
+<div class="flex flex-column flex-row-ns">
+<div class="blah w-100">
+<h1 class="f3 fw1 athelas mt0 lh-title">
 <a href=/posts/blog-update-log/ class="color-inherit dim link">
 블로그 UPDATE LOG
 </a>
@@ -89,28 +111,15 @@ theme에서 {{ template "_internal/google_analytics.html" . }}을 적용할 때 
 </div>
 </article>
 </div>
-<div class="relative w-100 mb4">
-<article class="bb b--black-10">
-<div class="db pv4 ph3 ph0-l no-underline dark-gray">
-<div class="flex flex-column flex-row-ns">
-<div class="blah w-100">
-<h1 class="f3 fw1 athelas mt0 lh-title">
-<a href=/posts/when_should_beginner_ask/ class="color-inherit dim link">
+</section>
+<section class=w-100>
+<h1 class=f3></h1>
+<h2 class="f5 fw4 mb4 dib mr3">
+<a href=/posts/when_should_beginner_ask/ class="link black dim">
 신입은 언제 질문을 해야 하는 걸까?
 </a>
-</h1>
-<div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-신입은 언제 질문을 해야 하는 걸까요? 인터넷에서 종종 보는 질문입니다.
-A: 사수가 질문을 듣고 기분이 안나빠질 때&mldr;
-는 농담이고&mldr; 이 질문을 바꿔 말하면, 얼마나 고민 하고 질문을 해야 하는 건가요? 가 됩니다.
-당연하게도, 각자의 선호도는 있을 지언정 명확한 기준은 없습니다. 그러니까 논쟁이 되는 거겠죠. 하지만, 단순히 케바케라는 일반적인 결론을 내기에는 내가 모르는 것에 대해서 얼마나 생각해 봐야 하나&mldr; 는 중요한 주제이고, 신입으로 조직 생활을 해 나가기 위해 자신만의 답이 필요합니다.
-</div>
-<a href=/posts/when_should_beginner_ask/ class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
-</div>
-</div>
-</div>
-</article>
-</div>
+</h2>
+<a href=/posts/ class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc"></a>
 </section>
 </div>
 </main>
