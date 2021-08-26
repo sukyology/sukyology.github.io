@@ -1,8 +1,13 @@
 ---
 title: "kotlin-spring 간단한 통합 테스트 설정"
-date: 2021-08-17T08:27:27+09:00
+date: 2021-08-17T08 :27:27+09:00
 draft: false
+categories: ['spring']
+tags: ['kotlin', 'spring', 'test', 'testcontainers']
 ---
+
+> 해당 post의 개선 사항을 [새로운 글]({{< ref "../spring_integration_test_ex2">}})에 올렸습니다.
+> 새로운 글을 적고보니 반말로 썼군요. 앞으로는 존댓말로 쓰겠습니다. 이글을 읽고 불편했던 분들이 있었다면 죄송합니다. 
 
 ### 기존 상황
 
