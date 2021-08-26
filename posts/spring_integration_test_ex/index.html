@@ -4,35 +4,36 @@
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
 <title>kotlin-spring 간단한 통합 테스트 설정 | sukyology</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
-<meta name=description content="기존 상황  로컬 DB를 사용하여 스프링 통합 테스트를 하고 있었다.
+<meta name=description content="해당 post의 개선 사항을 새로운 글에 올렸습니다. 새로운 글을 적고보니 반말로 썼군요. 앞으로는 존댓말로 쓰겠습니다. 이글을 읽고 불편했던 분들이 있었다면 죄송합니다.
+ 기존 상황  로컬 DB를 사용하여 스프링 통합 테스트를 하고 있었다.
 개발망에 서버를 올리고, 추가적인 테스트를 하고 있었다.
  목적  코너케이스나 데이터 정합성까진 아니더라도 기본적인 api의 동작 여부는 코드가 변경될 때 마다 자동으로 체크하고 싶다.
- 해결 방법  db의 멱등성 부여  docker container를 테스트마다 생성함.   자동으로 체크  github actions를 통해 풀리퀘나 푸시가 일어날 때 마다 테스트코드 실행   api 동작 여부 체크  testResttemplate으로 실행 spring 서버에 api 요청    구체적인 설정 dependency 설정 build.">
+ 해결 방법  db의 멱등성 부여  docker container를 테스트마다 생성함.">
 <meta name=generator content="Hugo 0.87.0">
 <meta name=ROBOTS content="INDEX, FOLLOW">
 <link rel=stylesheet href=/ananke/css/main.min.css>
 <meta property="og:title" content="kotlin-spring 간단한 통합 테스트 설정">
-<meta property="og:description" content="기존 상황  로컬 DB를 사용하여 스프링 통합 테스트를 하고 있었다.
+<meta property="og:description" content="해당 post의 개선 사항을 새로운 글에 올렸습니다. 새로운 글을 적고보니 반말로 썼군요. 앞으로는 존댓말로 쓰겠습니다. 이글을 읽고 불편했던 분들이 있었다면 죄송합니다.
+ 기존 상황  로컬 DB를 사용하여 스프링 통합 테스트를 하고 있었다.
 개발망에 서버를 올리고, 추가적인 테스트를 하고 있었다.
  목적  코너케이스나 데이터 정합성까진 아니더라도 기본적인 api의 동작 여부는 코드가 변경될 때 마다 자동으로 체크하고 싶다.
- 해결 방법  db의 멱등성 부여  docker container를 테스트마다 생성함.   자동으로 체크  github actions를 통해 풀리퀘나 푸시가 일어날 때 마다 테스트코드 실행   api 동작 여부 체크  testResttemplate으로 실행 spring 서버에 api 요청    구체적인 설정 dependency 설정 build.">
+ 해결 방법  db의 멱등성 부여  docker container를 테스트마다 생성함.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://sukyology.github.io/posts/spring_integration_test_ex/"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-08-17T08:27:27+09:00">
-<meta property="article:modified_time" content="2021-08-17T08:27:27+09:00">
 <meta itemprop=name content="kotlin-spring 간단한 통합 테스트 설정">
-<meta itemprop=description content="기존 상황  로컬 DB를 사용하여 스프링 통합 테스트를 하고 있었다.
+<meta itemprop=description content="해당 post의 개선 사항을 새로운 글에 올렸습니다. 새로운 글을 적고보니 반말로 썼군요. 앞으로는 존댓말로 쓰겠습니다. 이글을 읽고 불편했던 분들이 있었다면 죄송합니다.
+ 기존 상황  로컬 DB를 사용하여 스프링 통합 테스트를 하고 있었다.
 개발망에 서버를 올리고, 추가적인 테스트를 하고 있었다.
  목적  코너케이스나 데이터 정합성까진 아니더라도 기본적인 api의 동작 여부는 코드가 변경될 때 마다 자동으로 체크하고 싶다.
- 해결 방법  db의 멱등성 부여  docker container를 테스트마다 생성함.   자동으로 체크  github actions를 통해 풀리퀘나 푸시가 일어날 때 마다 테스트코드 실행   api 동작 여부 체크  testResttemplate으로 실행 spring 서버에 api 요청    구체적인 설정 dependency 설정 build."><meta itemprop=datePublished content="2021-08-17T08:27:27+09:00">
-<meta itemprop=dateModified content="2021-08-17T08:27:27+09:00">
-<meta itemprop=wordCount content="489">
-<meta itemprop=keywords content><meta name=twitter:card content="summary">
+ 해결 방법  db의 멱등성 부여  docker container를 테스트마다 생성함.">
+<meta itemprop=wordCount content="510">
+<meta itemprop=keywords content="kotlin,spring,test,testcontainers,"><meta name=twitter:card content="summary">
 <meta name=twitter:title content="kotlin-spring 간단한 통합 테스트 설정">
-<meta name=twitter:description content="기존 상황  로컬 DB를 사용하여 스프링 통합 테스트를 하고 있었다.
+<meta name=twitter:description content="해당 post의 개선 사항을 새로운 글에 올렸습니다. 새로운 글을 적고보니 반말로 썼군요. 앞으로는 존댓말로 쓰겠습니다. 이글을 읽고 불편했던 분들이 있었다면 죄송합니다.
+ 기존 상황  로컬 DB를 사용하여 스프링 통합 테스트를 하고 있었다.
 개발망에 서버를 올리고, 추가적인 테스트를 하고 있었다.
  목적  코너케이스나 데이터 정합성까진 아니더라도 기본적인 api의 동작 여부는 코드가 변경될 때 마다 자동으로 체크하고 싶다.
- 해결 방법  db의 멱등성 부여  docker container를 테스트마다 생성함.   자동으로 체크  github actions를 통해 풀리퀘나 푸시가 일어날 때 마다 테스트코드 실행   api 동작 여부 체크  testResttemplate으로 실행 spring 서버에 api 요청    구체적인 설정 dependency 설정 build.">
+ 해결 방법  db의 멱등성 부여  docker container를 테스트마다 생성함.">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-TDR87VQY72"></script>
 <script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-TDR87VQY72',{anonymize_ip:!1})}</script>
 </head>
@@ -83,9 +84,13 @@ PROGRAMMING
 </a>
 </div>
 <h1 class="f1 athelas mt3 mb1">kotlin-spring 간단한 통합 테스트 설정</h1>
-<time class="f6 mv4 dib tracked" datetime=2021-08-17T08:27:27+09:00>August 17, 2021</time>
+<time class="f6 mv4 dib tracked" datetime=0001-01-01T00:00:00Z>January 1, 0001</time>
 </header>
-<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h3 id=기존-상황>기존 상황</h3>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><blockquote>
+<p>해당 post의 개선 사항을 <a href=https://sukyology.github.io/posts/spring_integration_test_ex2/>새로운 글</a>에 올렸습니다.
+새로운 글을 적고보니 반말로 썼군요. 앞으로는 존댓말로 쓰겠습니다. 이글을 읽고 불편했던 분들이 있었다면 죄송합니다.</p>
+</blockquote>
+<h3 id=기존-상황>기존 상황</h3>
 <blockquote>
 <p>로컬 DB를 사용하여 스프링 통합 테스트를 하고 있었다.</p>
 <p>개발망에 서버를 올리고, 추가적인 테스트를 하고 있었다.</p>
@@ -234,6 +239,18 @@ dependencyManagement {
 </blockquote>
 <p>-끝-</p>
 <ul class=pa0>
+<li class=list>
+<a href=/tags/kotlin class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">kotlin</a>
+</li>
+<li class=list>
+<a href=/tags/spring class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">spring</a>
+</li>
+<li class=list>
+<a href=/tags/test class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">test</a>
+</li>
+<li class=list>
+<a href=/tags/testcontainers class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">testcontainers</a>
+</li>
 </ul>
 <div class="mt6 instapaper_ignoref">
 </div>
@@ -241,6 +258,14 @@ dependencyManagement {
 <div class=utterances></div>
 <script src=https://utteranc.es/client.js repo=sukyology/sukyology.github.io issue-term=pathname label=blog-comments theme=github-light crossorigin=anonymous async></script>
 <aside class="w-30-l mt6-l">
+<div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
+<p class="f5 b mb3"></p>
+<ul class="pa0 list">
+<li class=mb2>
+<a href=/posts/spring_integration_test_ex2/>kotlin-spring 간단한 통합 테스트 설정 2</a>
+</li>
+</ul>
+</div>
 </aside>
 </article>
 </main>

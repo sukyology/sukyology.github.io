@@ -66,15 +66,15 @@ programming
 <div class="bg-white mb3 pa4 gray overflow-hidden">
 <span class="f6 db">Posts</span>
 <h1 class="f3 near-black">
-<a href=/posts/spring_integration_test_ex/ class="link black dim">
-kotlin-spring 간단한 통합 테스트 설정
+<a href=/posts/spring_integration_test_ex2/ class="link black dim">
+kotlin-spring 간단한 통합 테스트 설정 2
 </a>
 </h1>
 <div class="nested-links f5 lh-copy nested-copy-line-height">
-기존 상황 로컬 DB를 사용하여 스프링 통합 테스트를 하고 있었다.
-개발망에 서버를 올리고, 추가적인 테스트를 하고 있었다.
-목적 코너케이스나 데이터 정합성까진 아니더라도 기본적인 api의 동작 여부는 코드가 변경될 때 마다 자동으로 체크하고 싶다.
-해결 방법 db의 멱등성 부여 docker container를 테스트마다 생성함. 자동으로 체크 github actions를 통해 풀리퀘나 푸시가 일어날 때 마다 테스트코드 실행 api 동작 여부 체크 testResttemplate으로 실행 spring 서버에 api 요청 구체적인 설정 dependency 설정 build.
+이전 포스트에서 testcontainers를 이용한 스프링 통합 테스트를 다뤘습니다. 이 포스트는 해당 포스트에서 작성한 환경 설정에서 더 나아가는 환경 설정을 다뤘습니다.
+기존 상황 testcontainers를 통해 docker 가 설치된 곳이라면 어디서든 독립적으로 통합 테스트를 실행할 수 있도록 만들었습니다. 하지만! 여전히 문제가 있었습니다.
+이전 포스트와 같은 설정으로 돌릴 경우, spring의 컨테이너가 시작하기 위해서 띄우는 db 컨테이너와 별개로 테스트에서 쓰기 위해 컨테이너를 하나 더 띄웁니다.
+목적 docker container를 한번만 띄우고 싶다.
 </div>
 </div>
 </div>
@@ -115,7 +115,27 @@ A: 사수가 질문을 듣고 기분이 안나빠질 때&mldr;
 </div>
 </div>
 </div>
-</section></article>
+</section>
+<ul class="pagination pagination-default">
+<li class="page-item disabled">
+<a href=# aria-disabled=true aria-label=First class=page-link role=button tabindex=-1><span aria-hidden=true>&#171;&#171;</span></a>
+</li>
+<li class="page-item disabled">
+<a href=# aria-disabled=true aria-label=Previous class=page-link role=button tabindex=-1><span aria-hidden=true>&#171;</span></a>
+</li>
+<li class="page-item active">
+<a href=# aria-current=page aria-label="Page 1" class=page-link role=button>1</a>
+</li>
+<li class=page-item>
+<a href=/posts/page/2/ aria-label="Page 2" class=page-link role=button>2</a>
+</li>
+<li class=page-item>
+<a href=/posts/page/2/ aria-label=Next class=page-link role=button><span aria-hidden=true>&#187;</span></a>
+</li>
+<li class=page-item>
+<a href=/posts/page/2/ aria-label=Last class=page-link role=button><span aria-hidden=true>&#187;&#187;</span></a>
+</li>
+</ul></article>
 </main>
 <footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">

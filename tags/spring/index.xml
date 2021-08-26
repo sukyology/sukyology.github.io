@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>spring on sukyology</title><link>https://sukyology.github.io/tags/spring/</link><description>Recent content in spring on sukyology</description><generator>Hugo -- gohugo.io</generator><language>ko-kr</language><lastBuildDate>Thu, 26 Aug 2021 08:27:27 +0900</lastBuildDate><atom:link href="https://sukyology.github.io/tags/spring/index.xml" rel="self" type="application/rss+xml"/><item><title>kotlin-spring 간단한 통합 테스트 설정 2</title><link>https://sukyology.github.io/posts/spring_integration_test_ex2/</link><pubDate>Thu, 26 Aug 2021 08:27:27 +0900</pubDate><guid>https://sukyology.github.io/posts/spring_integration_test_ex2/</guid><description>이전 포스트에서 testcontainers를 이용한 스프링 통합 테스트를 다뤘습니다. 이 포스트는 해당 포스트에서 작성한 환경 설정에서 더 나아가는 환경 설정을 다뤘습니다.
+기존 상황 testcontainers를 통해 docker 가 설치된 곳이라면 어디서든 독립적으로 통합 테스트를 실행할 수 있도록 만들었습니다. 하지만! 여전히 문제가 있었습니다.
+이전 포스트와 같은 설정으로 돌릴 경우, spring의 컨테이너가 시작하기 위해서 띄우는 db 컨테이너와 별개로 테스트에서 쓰기 위해 컨테이너를 하나 더 띄웁니다.
+목적 docker container를 한번만 띄우고 싶다.</description></item><item><title>kotlin-spring 간단한 통합 테스트 설정</title><link>https://sukyology.github.io/posts/spring_integration_test_ex/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://sukyology.github.io/posts/spring_integration_test_ex/</guid><description>해당 post의 개선 사항을 새로운 글에 올렸습니다. 새로운 글을 적고보니 반말로 썼군요. 앞으로는 존댓말로 쓰겠습니다. 이글을 읽고 불편했던 분들이 있었다면 죄송합니다.
+기존 상황 로컬 DB를 사용하여 스프링 통합 테스트를 하고 있었다.
+개발망에 서버를 올리고, 추가적인 테스트를 하고 있었다.
+목적 코너케이스나 데이터 정합성까진 아니더라도 기본적인 api의 동작 여부는 코드가 변경될 때 마다 자동으로 체크하고 싶다.
+해결 방법 db의 멱등성 부여 docker container를 테스트마다 생성함.</description></item></channel></rss>

@@ -71,17 +71,17 @@ sukyology
 <div class="flex flex-column flex-row-ns">
 <div class="blah w-100">
 <h1 class="f3 fw1 athelas mt0 lh-title">
-<a href=/posts/spring_integration_test_ex/ class="color-inherit dim link">
-kotlin-spring 간단한 통합 테스트 설정
+<a href=/posts/spring_integration_test_ex2/ class="color-inherit dim link">
+kotlin-spring 간단한 통합 테스트 설정 2
 </a>
 </h1>
 <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-기존 상황 로컬 DB를 사용하여 스프링 통합 테스트를 하고 있었다.
-개발망에 서버를 올리고, 추가적인 테스트를 하고 있었다.
-목적 코너케이스나 데이터 정합성까진 아니더라도 기본적인 api의 동작 여부는 코드가 변경될 때 마다 자동으로 체크하고 싶다.
-해결 방법 db의 멱등성 부여 docker container를 테스트마다 생성함. 자동으로 체크 github actions를 통해 풀리퀘나 푸시가 일어날 때 마다 테스트코드 실행 api 동작 여부 체크 testResttemplate으로 실행 spring 서버에 api 요청 구체적인 설정 dependency 설정 build.
+이전 포스트에서 testcontainers를 이용한 스프링 통합 테스트를 다뤘습니다. 이 포스트는 해당 포스트에서 작성한 환경 설정에서 더 나아가는 환경 설정을 다뤘습니다.
+기존 상황 testcontainers를 통해 docker 가 설치된 곳이라면 어디서든 독립적으로 통합 테스트를 실행할 수 있도록 만들었습니다. 하지만! 여전히 문제가 있었습니다.
+이전 포스트와 같은 설정으로 돌릴 경우, spring의 컨테이너가 시작하기 위해서 띄우는 db 컨테이너와 별개로 테스트에서 쓰기 위해 컨테이너를 하나 더 띄웁니다.
+목적 docker container를 한번만 띄우고 싶다.
 </div>
-<a href=/posts/spring_integration_test_ex/ class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
+<a href=/posts/spring_integration_test_ex2/ class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1"></a>
 </div>
 </div>
 </div>
@@ -117,6 +117,11 @@ theme에서 {{ template "_internal/google_analytics.html" . }}을 적용할 때 
 <h2 class="f5 fw4 mb4 dib mr3">
 <a href=/posts/when_should_beginner_ask/ class="link black dim">
 신입은 언제 질문을 해야 하는 걸까?
+</a>
+</h2>
+<h2 class="f5 fw4 mb4 dib mr3">
+<a href=/posts/spring_integration_test_ex/ class="link black dim">
+kotlin-spring 간단한 통합 테스트 설정
 </a>
 </h2>
 <a href=/posts/ class="link db f6 pa2 br3 bg-mid-gray white dim w4 tc"></a>
