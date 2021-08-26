@@ -26,7 +26,7 @@
 개발망에 서버를 올리고, 추가적인 테스트를 하고 있었다.
  목적  코너케이스나 데이터 정합성까진 아니더라도 기본적인 api의 동작 여부는 코드가 변경될 때 마다 자동으로 체크하고 싶다.
  해결 방법  db의 멱등성 부여  docker container를 테스트마다 생성함.">
-<meta itemprop=wordCount content="510">
+<meta itemprop=wordCount content="512">
 <meta itemprop=keywords content="kotlin,spring,test,testcontainers,"><meta name=twitter:card content="summary">
 <meta name=twitter:title content="kotlin-spring 간단한 통합 테스트 설정">
 <meta name=twitter:description content="해당 post의 개선 사항을 새로운 글에 올렸습니다. 새로운 글을 적고보니 반말로 썼군요. 앞으로는 존댓말로 쓰겠습니다. 이글을 읽고 불편했던 분들이 있었다면 죄송합니다.
@@ -238,6 +238,8 @@ dependencyManagement {
 <p>아&mldr; 참고로 로컬에서 돌려보고 싶으면 docker daemon이 pc에서 돌고 있어야 한다. 설치 방법은 검색하면 나온다. ^^</p>
 </blockquote>
 <p>-끝-</p>
+<h4 id=bibliography>Bibliography</h4>
+<p><a href=https://velog.io/@lsb156/Spring-Boot-TestContainers>https://velog.io/@lsb156/Spring-Boot-TestContainers</a></p>
 <ul class=pa0>
 <li class=list>
 <a href=/tags/kotlin class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">kotlin</a>
