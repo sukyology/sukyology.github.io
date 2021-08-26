@@ -192,14 +192,12 @@ jobs:
 
 이런 식으로 리파지토리 actions 탭에 뭐(?)가 생겨야 한다.
 
-
-
 https://github.com/sukyology/spring-boot-integrate-test-ex <= 예제 코드
-
-
 
 > 아... 참고로 로컬에서 돌려보고 싶으면 docker daemon이 pc에서 돌고 있어야 한다. 설치 방법은 검색하면 나온다. ^^
 
-
-
 -끝-
+
+#### Bibliography
+
+https://velog.io/@lsb156/Spring-Boot-TestContainers

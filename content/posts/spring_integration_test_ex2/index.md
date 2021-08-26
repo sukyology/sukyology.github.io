@@ -110,3 +110,8 @@ class SpringBootIntegrateTestExApplicationTests(
 
 https://github.com/sukyology/spring-boot-integrate-test-ex <= 예제 코드
 
+-끝-
+
+#### Bibliography
+
+https://youtu.be/gF-YG6YZxZk
