@@ -10,7 +10,7 @@ theme 이 없다는 가정하에 다음과 같이 적용할 수 있다.
 <head>엘레멘트가 있는 layout html파일에 {{ template &#34;_internal/google_analytics.html&#34; . }} 을 적용하고, 설정파일(.toml 이라고 가정) 에 googleAnalytics = <구글_애널리틱스_속성_ID> 를 입력하면 끝이다.
 그럼에도 몇가지 삽질을 했다.
   theme에서 {{ template &#34;_internal/google_analytics.html&#34; . }}을 적용할 때 production에서만 적용하도록 분기문이 적용되어 있었다. 내가 쓰는 ananke에서 production 판별 조건 중 하나가 HUGO_ENV=production이었는데, HUGO cli에서 -e 로 세팅할 수 있는 줄 알았는데, 아니었다.">
-<meta name=generator content="Hugo 0.88.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="INDEX, FOLLOW">
 <link rel=stylesheet href=/ananke/css/main.min.css>
 <meta property="og:title" content="블로그 UPDATE LOG">

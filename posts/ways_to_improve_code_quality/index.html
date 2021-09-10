@@ -1,0 +1,187 @@
+<!doctype html><html lang=ko-kr>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<title>코드 퀄리티를 높이는 방법과 왜 그래야 하는지 by Venkat | sukyology</title>
+<meta name=viewport content="width=device-width,minimum-scale=1">
+<meta name=description content="이 글은 (1) Reasons & Ways to Improve Code Quality • Venkat Subramaniam • GOTO 2021 - YouTube 의 저만의 해석 및 감상문입니다.
+ [TOC]
+코드 품질을 왜 높여야만 하는가? 코드 품질을 높여야 하는 이유는 순전히 경제적인 이유 때문입니다.
+코드의 품질이 낮아지면 코드의 가독성이 떨어지고 기능의 수정이나 개선을 하기 위해서 어떻게 해야 하는지 알아내기가 점점 어려워집니다. 그렇게 되면 시간을 많이 소요하게 될 것이고, 프로그래머들이 만들어내는 시간 대비 가치는 점점 낮아질 것입니다.">
+<meta name=generator content="Hugo 0.88.1">
+<meta name=ROBOTS content="INDEX, FOLLOW">
+<link rel=stylesheet href=/ananke/css/main.min.css>
+<meta property="og:title" content="코드 퀄리티를 높이는 방법과 왜 그래야 하는지 by Venkat">
+<meta property="og:description" content="이 글은 (1) Reasons & Ways to Improve Code Quality • Venkat Subramaniam • GOTO 2021 - YouTube 의 저만의 해석 및 감상문입니다.
+ [TOC]
+코드 품질을 왜 높여야만 하는가? 코드 품질을 높여야 하는 이유는 순전히 경제적인 이유 때문입니다.
+코드의 품질이 낮아지면 코드의 가독성이 떨어지고 기능의 수정이나 개선을 하기 위해서 어떻게 해야 하는지 알아내기가 점점 어려워집니다. 그렇게 되면 시간을 많이 소요하게 될 것이고, 프로그래머들이 만들어내는 시간 대비 가치는 점점 낮아질 것입니다.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://sukyology.github.io/posts/ways_to_improve_code_quality/"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2021-09-04T20:27:27+09:00">
+<meta property="article:modified_time" content="2021-09-04T20:27:27+09:00">
+<meta itemprop=name content="코드 퀄리티를 높이는 방법과 왜 그래야 하는지 by Venkat">
+<meta itemprop=description content="이 글은 (1) Reasons & Ways to Improve Code Quality • Venkat Subramaniam • GOTO 2021 - YouTube 의 저만의 해석 및 감상문입니다.
+ [TOC]
+코드 품질을 왜 높여야만 하는가? 코드 품질을 높여야 하는 이유는 순전히 경제적인 이유 때문입니다.
+코드의 품질이 낮아지면 코드의 가독성이 떨어지고 기능의 수정이나 개선을 하기 위해서 어떻게 해야 하는지 알아내기가 점점 어려워집니다. 그렇게 되면 시간을 많이 소요하게 될 것이고, 프로그래머들이 만들어내는 시간 대비 가치는 점점 낮아질 것입니다."><meta itemprop=datePublished content="2021-09-04T20:27:27+09:00">
+<meta itemprop=dateModified content="2021-09-04T20:27:27+09:00">
+<meta itemprop=wordCount content="791">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="코드 퀄리티를 높이는 방법과 왜 그래야 하는지 by Venkat">
+<meta name=twitter:description content="이 글은 (1) Reasons & Ways to Improve Code Quality • Venkat Subramaniam • GOTO 2021 - YouTube 의 저만의 해석 및 감상문입니다.
+ [TOC]
+코드 품질을 왜 높여야만 하는가? 코드 품질을 높여야 하는 이유는 순전히 경제적인 이유 때문입니다.
+코드의 품질이 낮아지면 코드의 가독성이 떨어지고 기능의 수정이나 개선을 하기 위해서 어떻게 해야 하는지 알아내기가 점점 어려워집니다. 그렇게 되면 시간을 많이 소요하게 될 것이고, 프로그래머들이 만들어내는 시간 대비 가치는 점점 낮아질 것입니다.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TDR87VQY72"></script>
+<script>var doNotTrack=!1;if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','G-TDR87VQY72',{anonymize_ip:!1})}</script>
+</head>
+<body class="ma0 avenir bg-near-white">
+<header>
+<div class=bg-black>
+<nav class="pv3 ph3 ph4-ns" role=navigation>
+<div class="flex-l justify-between items-center center">
+<a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
+sukyology
+</a>
+<div class="flex-l items-center">
+<ul class="pl0 mr3">
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/hobby/ title="hobby page">
+hobby
+</a>
+</li>
+<li class="list f5 f4-ns fw4 dib pr3">
+<a class="hover-white no-underline white-90" href=/posts/ title="programming page">
+programming
+</a>
+</li>
+</ul>
+<a href=https://twitter.com/sukyology target=_blank class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" width="8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</span></a>
+<a href=https://github.com/sukyology target=_blank class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel=noopener aria-label="follow on Github——Opens in a new window"><svg height="32" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" width="8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</span></a>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main class=pb7 role=main>
+<article class="flex-l flex-wrap justify-between mw8 center ph3" style=word-break:break-all>
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+PROGRAMMING
+</aside>
+<div id=sharing class=mt3>
+<a href="https://www.facebook.com/sharer.php?u=https://sukyology.github.io/posts/ways_to_improve_code_quality/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
+</a>
+<a href="https://twitter.com/share?url=https://sukyology.github.io/posts/ways_to_improve_code_quality/&text=%ec%bd%94%eb%93%9c%20%ed%80%84%eb%a6%ac%ed%8b%b0%eb%a5%bc%20%eb%86%92%ec%9d%b4%eb%8a%94%20%eb%b0%a9%eb%b2%95%ea%b3%bc%20%ec%99%9c%20%ea%b7%b8%eb%9e%98%ec%95%bc%20%ed%95%98%eb%8a%94%ec%a7%80%20by%20Venkat" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</a>
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://sukyology.github.io/posts/ways_to_improve_code_quality/&title=%ec%bd%94%eb%93%9c%20%ed%80%84%eb%a6%ac%ed%8b%b0%eb%a5%bc%20%eb%86%92%ec%9d%b4%eb%8a%94%20%eb%b0%a9%eb%b2%95%ea%b3%bc%20%ec%99%9c%20%ea%b7%b8%eb%9e%98%ec%95%bc%20%ed%95%98%eb%8a%94%ec%a7%80%20by%20Venkat" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</a>
+</div>
+<h1 class="f1 athelas mt3 mb1">코드 퀄리티를 높이는 방법과 왜 그래야 하는지 by Venkat</h1>
+<time class="f6 mv4 dib tracked" datetime=2021-09-04T20:27:27+09:00>September 4, 2021</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><blockquote>
+<p>이 글은 <a href="https://www.youtube.com/watch?v=znZlF4uQBN0">(1) Reasons & Ways to Improve Code Quality • Venkat Subramaniam • GOTO 2021 - YouTube</a> 의 저만의 해석 및 감상문입니다.</p>
+</blockquote>
+<p>[TOC]</p>
+<h1 id=코드-품질을-왜-높여야만-하는가>코드 품질을 왜 높여야만 하는가?</h1>
+<p>코드 품질을 높여야 하는 이유는 순전히 경제적인 이유 때문입니다.</p>
+<p>코드의 품질이 낮아지면 코드의 가독성이 떨어지고 기능의 수정이나 개선을 하기 위해서 어떻게 해야 하는지 알아내기가 점점 어려워집니다. 그렇게 되면 시간을 많이 소요하게 될 것이고, 프로그래머들이 만들어내는 시간 대비 가치는 점점 낮아질 것입니다. 그렇게 되지 않도록 끊임없이 코드 품질을 높여야 합니다.</p>
+<h1 id=코드-품질을-개선하는-방법은>코드 품질을 개선하는 방법은?</h1>
+<p>코드의 품질을 높이기 위한 방법으로 총 여섯 가지 제안하고 있습니다.</p>
+<ol>
+<li>함수는 한 단계만 추상화해라.</li>
+<li>코드의 응집력을 높이고, 결합도를 낮춰라.</li>
+<li>의도를 표현하라.</li>
+<li>원시적인 코드에 대한 집착을 버려라.</li>
+<li>똑똑한 코드를 멀리하라.</li>
+<li>주석은 무엇보다 왜라는 질문에 집중해서 작성해라.</li>
+<li>의미 있는 이름을 부여해라.</li>
+<li>전략적 코드 리뷰</li>
+</ol>
+<p>하나씩 살펴보겠습니다.</p>
+<h2 id=honor-slap>Honor SLAP</h2>
+<p>SLAP은 <strong>S</strong>ingle <strong>L</strong>evel of <strong>A</strong>bstraction <strong>P</strong>rinciple입니다. 함수를 한 단계씩 구체화하면서 작성하라는 것입니다.</p>
+<p>이렇게 하는 게 왜 코드 품질을 개선하는지 말씀드리겠습니다.</p>
+<p>우리가 파악하기 힘든 코드의 특성 중 하나는 함수가 너무 길다는 것입니다. 길면 보통 복잡하기 때문이지요.</p>
+<p>함수가 길다는 것은 무슨 뜻일까요? 100줄? 1000줄? 함수가 긴 것이 코드 파악에 어려움을 준다는 것은 대부분의 사람이 동의하지만, 길다의 기준은 모두 다를 수 밖에 없습니다.</p>
+<p>화자는 함수의 길이가 &lsquo;줄&rsquo;에 해당하지 않는다고 얘기합니다. 우리 마음속에 함수의 길이는 <strong>추상화의 깊이</strong>라고 얘기합니다.</p>
+<p>예를 들어 보겠습니다.</p>
+<p>주말에 부모님 집에 가서 식사한 것을 설명할 때, <em>&ldquo;집에서 현관문으로 걸어가 손잡을 잡고, 문을 열어 밖으로 나와서, 다시 스크린 도어를 열고 나와서 아파트 밖으로 나온 다음, 앞으로 걸어가다가, 왼쪽에 있는 아파트 정문으로 나가서, 50미터 밖에 있는 버스 정류장까지 간 다음에 3426번 버스를 올 때까지 기다렸다가 버스가 정류장에 정차한 후에 문이 열린 후에 올라타고, 주머니에 있는 교통카드를 꺼내서 교통카드를 버스 운전사 좌석 옆에 있는 카드 리더기에 찍고, 카드리더기가 1250원 표시한 것을 확인한 후에 몸을 돌려서 앞에서 두 번째 좌측에 있는 빈 자리에 앉아서&mldr; (후략)"</em></p>
+<p>이렇게 얘기하지는 않을 겁니다. 이렇게 얘기하는 순간 주변에 사람들은 다 도망갈 겁니다. (웃음) 이 문장의 문제는 1)도대체 무슨 말을 하려는 건지 따라갈 수가 없다는 것 2) 듣는 사람이 어디까지 구체적으로 듣고싶은지 모르는 채로 너무 구체적으로 얘기한 것입니다. 사람은 보통 이렇게 대화하지 않습니다. 일반적인 대화는 이렇겠죠?</p>
+<p>&ldquo;주말에 뭐 했어?&rdquo;</p>
+<p>&ldquo;주말에 부모님이랑 식사했어.&rdquo;</p>
+<p>&ldquo;어디 갔는데?&rdquo;</p>
+<p>&ldquo;부모님 집에서 먹었어?&rdquo;</p>
+<p>&ldquo;부모님 집이 어딘데? 멀어?&rdquo;</p>
+<p>&ldquo;부모님 집은&mldr; xxx에 있어. "</p>
+<p>&ldquo;뭐 타고 갔어?&rdquo;</p>
+<p>&ldquo;버스&rdquo;</p>
+<p>&ldquo;너희 집에서 그 동네까지 바로 가는 버스가 있어?&rdquo;</p>
+<p>&ldquo;3426번 타면 어디를 거친 후에 바로 가&rdquo;</p>
+<p>&ldquo;&mldr;&rdquo;</p>
+<p>&ldquo;&mldr;&rdquo;</p>
+<p>대화가 계속 진행될 수도 있고, 물어보는 사람이 더 구체적인 게 궁금하지 않으면 더는 얘기하지 않고, 대화가 종료될 것 같습니다. 아주 간단한 사실부터 구체적인 사실에 도달하는 것. 이게 사람이 무언가를 파악하는 자연스러운 방식입니다.</p>
+<p>화자는 코드도 마찬가지라고 말하고 있습니다.</p>
+<h2 id=코드의-응집력을-높이고-결합도는-낮춰라>코드의 응집력을 높이고, 결합도는 낮춰라.</h2>
+<p>코드의 응집력이 높다는 것은 서랍 정리가 잘 되어 있는 것과 비슷합니다. 제가 서랍이 여러 개 있는데, 각 서랍에 들어가는 물건의 기준이 정해져 있지 않다면, 나중에 필기구를 찾을 때 어느 서랍을 열어봐야 하는지 몰라서 다 열어봐야 합니다. 서랍이 잘 정리되어 있고 두 번째 서랍에 필기구가 정리되어 있으면 두 번째 서랍만 뒤져서 원하는 필기구를 찾으면 됩니다. 코드의 응집력이 높다는 것도 이와 상통합니다. 특정 종류의 함수를 어디서 찾아야 하는지 코드를 읽는 사람이 파악할 수 있게 하는 것. 그게 응집력이 높은 코드를 작성해야 하는 이유입니다.</p>
+<h2 id=의도를-코드에-표현해라>의도를 코드에 표현해라</h2>
+<p>이 부분은 이런 저런 설명을 영상에서 했지만, 해당 문장이 모든 것을 설명하는 것 같아서 부연 얘기는 하지 않겠습니다.</p>
+<h2 id=원시적인-코드에-대한-집착을-버려라>원시적인 코드에 대한 집착을 버려라</h2>
+<p>절차지향적인 프로그래밍 - 아주 단순한 분기문과 반복문, 그리고 변수에 재할당이 동시 다발적으로 일어나는 함수 - 는 그 안에서 파악해야 하는 내용들이 많아짐에 따라서 복잡성이 증가합니다. 이런 함수들은 대체적으로 람다를 통해서 선언적 함수로 치환할 수 있습니다. 선언적 함수는 사람으로 하여금 함수의 역할을 더 잘 이해하게 만들어줍니다.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>Stream<span style=color:#f92672>.</span><span style=color:#a6e22e>iterate</span><span style=color:#f92672>(</span>n<span style=color:#f92672>,</span> e<span style=color:#f92672>-&gt;</span> e<span style=color:#f92672>+</span>1<span style=color:#f92672>).</span><span style=color:#a6e22e>filter</span><span style=color:#f92672>(</span>Sample<span style=color:#f92672>::</span>isPrime<span style=color:#f92672>).</span><span style=color:#a6e22e>limit</span><span style=color:#f92672>(</span>k<span style=color:#f92672>).</span><span style=color:#a6e22e>mapToDouble</span><span style=color:#f92672>(</span>Math<span style=color:#f92672>::</span>sqrt<span style=color:#f92672>).</span><span style=color:#a6e22e>sum</span><span style=color:#f92672>()</span> <span style=color:#75715e>//isPrime은 소수인지 판단하는 함수
+</span></code></pre></div><p>이 함수를 보면 stream api 를 인지하고 있을 때 n에서 1씩 증가하면서 소수만 걸러낸 후에 k개까지만 해당 소수의 제곱근으로 변환한 다음에 합을 구한다. 라고 이해할 수 있습니다.</p>
+<p>절차지향적이라면</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#66d9ef>double</span> result <span style=color:#f92672>=</span> 0<span style=color:#f92672>;</span>
+<span style=color:#66d9ef>int</span> index <span style=color:#f92672>=</span> n<span style=color:#f92672>;</span>
+<span style=color:#66d9ef>int</span> count <span style=color:#f92672>=</span> 0<span style=color:#f92672>;</span>
+<span style=color:#66d9ef>while</span><span style=color:#f92672>(</span>count <span style=color:#f92672>&lt;</span> k<span style=color:#f92672>){</span>
+    <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>isPrime<span style=color:#f92672>(</span>index<span style=color:#f92672>)){</span>
+        result<span style=color:#f92672>+=</span> Math<span style=color:#f92672>.</span><span style=color:#a6e22e>sqrt</span><span style=color:#f92672>(</span>index<span style=color:#f92672>);</span>
+        count<span style=color:#f92672>++;</span>
+    <span style=color:#f92672>}</span>
+    index<span style=color:#f92672>++;</span>
+<span style=color:#f92672>}</span>
+<span style=color:#66d9ef>return</span> result<span style=color:#f92672>;</span>
+</code></pre></div><p>이렇게 표현할 수 있을 것 같습니다. 이걸 읽으려면 세가지 변수를 우선 머리속에 입력한 다음에, 어떤 상황에서 어떻게 변하는지 하나하나 다 파악해야 합니다.</p>
+<h2 id=똑똑한-코드를-멀리하라>똑똑한 코드를 멀리하라</h2>
+<p>똑똑한 코드란, 코드를 본 후에 설명을 듣고는 &lsquo;이 함수가 이런 것을 하는 함수라고?&rsquo; 100이면 100 다 놀라는 코드입니다. 이런 함수를 작성하는 이유는 순전히 자기 만족입니다. 이런 코드는 시간이 지나고 언젠가 본인의 뒤통수를 칠겁니다. 똑똑한 바보는 폭력적이고 복잡한 것을 만들어내지만 천재는 단순함을 만들어낸다는 말을 기억하십시오.</p>
+<h2 id=주석은-what-보다는-why를-설명하라>주석은 what 보다는 why를 설명하라</h2>
+<p>코드 품질이 높다면 해당 함수나 클래스가 무엇을 하는 것인지 설명하는 것은 일종의 중복 작업입니다. 무엇을 하는지는 코드 그 자체로 표현하고, 그 코드가 왜 존재하는지를 설명하는 게 더 중요합니다.</p>
+<h2 id=의미있는-이름을-부여하라>의미있는 이름을 부여하라</h2>
+<p>자녀의 이름을 지어주듯이 좋은 이름을 지어주십시오.</p>
+<h2 id=전략적-코드-리뷰>전략적 코드 리뷰</h2>
+<p>코드 리뷰를 하기 위해서 팀 전체가 방안에 들어가서 처음부터 코드를 보면서 리뷰하는 것은 악몽이나 다름이 없습니다. 코드 리뷰는 소규모로 진행하되, 테스트 코드부터 리뷰하세요. 테스트코드를 읽고 의도를 파악한 다음에 실제 코드를 읽으면서 그 의도가 표현되었는지, 혹은 놓친 게 없는지 확인하고, 필요하다면 리뷰어가 테스트 코드를 추가하는 방식으로 진행하면 코드 리뷰가 한결 수월해집니다.</p>
+<ul class=pa0>
+</ul>
+<div class="mt6 instapaper_ignoref">
+</div>
+</div>
+<div class=utterances></div>
+<script src=https://utteranc.es/client.js repo=sukyology/sukyology.github.io issue-term=pathname label=blog-comments theme=github-light crossorigin=anonymous async></script>
+<aside class="w-30-l mt6-l">
+</aside>
+</article>
+</main>
+<footer class="bg-black bottom-0 w-100 pa3" role=contentinfo>
+<div class="flex justify-between">
+<a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href=https://sukyology.github.io/>
+&copy; sukyology 2021
+</a>
+<div>
+<a href=https://twitter.com/sukyology target=_blank class="link-transition twitter link dib z-999 pt3 pt0-l mr1" title="Twitter link" rel=noopener aria-label="follow on Twitter——Opens in a new window"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" width="8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</span></a>
+<a href=https://github.com/sukyology target=_blank class="link-transition github link dib z-999 pt3 pt0-l mr1" title="Github link" rel=noopener aria-label="follow on Github——Opens in a new window"><svg height="32" style="enable-background:new 0 0 512 512" viewBox="0 0 512 512" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M256 32C132.3 32 32 134.8 32 261.7c0 101.5 64.2 187.5 153.2 217.9 11.2 2.1 15.3-5 15.3-11.1.0-5.5-.2-19.9-.3-39.1-62.3 13.9-75.5-30.8-75.5-30.8-10.2-26.5-24.9-33.6-24.9-33.6-20.3-14.3 1.5-14 1.5-14 22.5 1.6 34.3 23.7 34.3 23.7 20 35.1 52.4 25 65.2 19.1 2-14.8 7.8-25 14.2-30.7-49.7-5.8-102-25.5-102-113.5.0-25.1 8.7-45.6 23-61.6-2.3-5.8-10-29.2 2.2-60.8.0.0 18.8-6.2 61.6 23.5 17.9-5.1 37-7.6 56.1-7.7 19 .1 38.2 2.6 56.1 7.7 42.8-29.7 61.5-23.5 61.5-23.5 12.2 31.6 4.5 55 2.2 60.8 14.3 16.1 23 36.6 23 61.6.0 88.2-52.4 107.6-102.3 113.3 8 7.1 15.2 21.1 15.2 42.5.0 30.7-.3 55.5-.3 63 0 6.1 4 13.3 15.4 11C415.9 449.1 480 363.1 480 261.7 480 134.8 379.7 32 256 32z"/></svg>
+<span class=new-window><svg height="8" style="enable-background:new 0 0 1000 1000" viewBox="0 0 1e3 1e3" width="8" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M598 128h298v298h-86V274L392 692l-60-60 418-418H598v-86zM810 810V512h86v298c0 46-40 86-86 86H214c-48 0-86-40-86-86V214c0-46 38-86 86-86h298v86H214v596h596z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
+</span></a>
+</div>
+</div>
+</footer>
+</body>
+</html>

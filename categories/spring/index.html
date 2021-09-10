@@ -5,7 +5,7 @@
 <title>spring | sukyology</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="석교의 블로그">
-<meta name=generator content="Hugo 0.88.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="INDEX, FOLLOW">
 <link rel=stylesheet href=/ananke/css/main.min.css>
 <link href=/categories/spring/index.xml rel=alternate type=application/rss+xml title=sukyology>
@@ -66,6 +66,26 @@ spring
 </article>
 <div class="mw8 center">
 <section class="flex-ns flex-wrap justify-around mt5">
+<div class="relative w-100 mb4 bg-white">
+<div class="relative w-100 mb4 bg-white nested-copy-line-height">
+<div class="bg-white mb3 pa4 gray overflow-hidden">
+<span class="f6 db">Posts</span>
+<h1 class="f3 near-black">
+<a href=/posts/test_with_ds_proxy/ class="link black dim">
+datasource-proxy를 활용해 n+1 쿼리 방지하기
+</a>
+</h1>
+<div class="nested-links f5 lh-copy nested-copy-line-height">
+기존 상황 n+1 쿼리를 db 호출 로그를 통해 육안으로 확인하고 있었습니다.
+목적 테스트를 통해서 n+1 쿼리를 빠르게 방지할 수 있는 방법을 찾고 싶습니다.
+해결 방안 datasource-proxy 라이브러리를 통해 실행한 쿼리문의 개수를 불러와서 예상한 쿼리문의 수와 맞는지 비교합니다.
+설정 build.gradle.kts에 다음과 같은 내용을 dependencies에 추가합니다.
+implementation("net.ttddyy:datasource-proxy:1.7") 그리고 spring-boot에서 proxybean을 생성하게 위해서 BeanPostProcessor를 하나 만들어서 등록해줍니다. 테스트에서만 사용할 거라 적절한 @Profile도 붙여줍니다.
+@Configuration @Profile("test") class DatasourceProxyBeanPostProcessor : BeanPostProcessor { override fun postProcessAfterInitialization(bean: Any, beanName: String): Any?
+</div>
+</div>
+</div>
+</div>
 <div class="relative w-100 mb4 bg-white">
 <div class="relative w-100 mb4 bg-white nested-copy-line-height">
 <div class="bg-white mb3 pa4 gray overflow-hidden">

@@ -5,7 +5,7 @@
 <title>programming | sukyology</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="석교의 블로그">
-<meta name=generator content="Hugo 0.88.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="INDEX, FOLLOW">
 <link rel=stylesheet href=/ananke/css/main.min.css>
 <link href=/posts/index.xml rel=alternate type=application/rss+xml title=sukyology>
@@ -62,6 +62,42 @@ programming
 <article class="pa3 pa4-ns nested-copy-line-height nested-img">
 <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
 <section class="flex-ns flex-wrap justify-around mt5">
+<div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+<div class="bg-white mb3 pa4 gray overflow-hidden">
+<span class="f6 db">Posts</span>
+<h1 class="f3 near-black">
+<a href=/posts/blog-update-log/ class="link black dim">
+블로그 UPDATE LOG
+</a>
+</h1>
+<div class="nested-links f5 lh-copy nested-copy-line-height">
+2021-08-14 ga 적용 hugo는 ga를 내부 template을 통해서 지원해준다.
+영어가 편하신 분은 gohugo#google-analytics 에서 보시길 추천한다.
+theme 이 없다는 가정하에 다음과 같이 적용할 수 있다.
+&lt;head>엘레멘트가 있는 layout html파일에 {{ template "_internal/google_analytics.html" . }} 을 적용하고, 설정파일(.toml 이라고 가정) 에 googleAnalytics = &lt;구글_애널리틱스_속성_ID> 를 입력하면 끝이다.
+그럼에도 몇가지 삽질을 했다.
+theme에서 {{ template "_internal/google_analytics.html" . }}을 적용할 때 production에서만 적용하도록 분기문이 적용되어 있었다. 내가 쓰는 ananke에서 production 판별 조건 중 하나가 HUGO_ENV=production이었는데, HUGO cli에서 -e 로 세팅할 수 있는 줄 알았는데, 아니었다.
+</div>
+</div>
+</div>
+</div>
+<div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+<div class="bg-white mb3 pa4 gray overflow-hidden">
+<span class="f6 db">Posts</span>
+<h1 class="f3 near-black">
+<a href=/posts/when_should_beginner_ask/ class="link black dim">
+신입은 언제 질문을 해야 하는 걸까?
+</a>
+</h1>
+<div class="nested-links f5 lh-copy nested-copy-line-height">
+신입은 언제 질문을 해야 하는 걸까요? 인터넷에서 종종 보는 질문입니다.
+A: 사수가 질문을 듣고 기분이 안나빠질 때&mldr;
+는 농담이고&mldr; 이 질문을 바꿔 말하면, 얼마나 고민 하고 질문을 해야 하는 건가요? 가 됩니다.
+당연하게도, 각자의 선호도는 있을 지언정 명확한 기준은 없습니다. 그러니까 논쟁이 되는 거겠죠. 하지만, 단순히 케바케라는 일반적인 결론을 내기에는 내가 모르는 것에 대해서 얼마나 생각해 봐야 하나&mldr; 는 중요한 주제이고, 신입으로 조직 생활을 해 나가기 위해 자신만의 답이 필요합니다.
+</div>
+</div>
+</div>
+</div>
 <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
 <div class="bg-white mb3 pa4 gray overflow-hidden">
 <span class="f6 db">Posts</span>

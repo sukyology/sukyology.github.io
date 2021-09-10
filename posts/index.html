@@ -5,7 +5,7 @@
 <title>programming | sukyology</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
 <meta name=description content="석교의 블로그">
-<meta name=generator content="Hugo 0.88.0">
+<meta name=generator content="Hugo 0.88.1">
 <meta name=ROBOTS content="INDEX, FOLLOW">
 <link rel=stylesheet href=/ananke/css/main.min.css>
 <link href=/posts/index.xml rel=alternate type=application/rss+xml title=sukyology>
@@ -66,6 +66,42 @@ programming
 <div class="bg-white mb3 pa4 gray overflow-hidden">
 <span class="f6 db">Posts</span>
 <h1 class="f3 near-black">
+<a href=/posts/test_with_ds_proxy/ class="link black dim">
+datasource-proxy를 활용해 n+1 쿼리 방지하기
+</a>
+</h1>
+<div class="nested-links f5 lh-copy nested-copy-line-height">
+기존 상황 n+1 쿼리를 db 호출 로그를 통해 육안으로 확인하고 있었습니다.
+목적 테스트를 통해서 n+1 쿼리를 빠르게 방지할 수 있는 방법을 찾고 싶습니다.
+해결 방안 datasource-proxy 라이브러리를 통해 실행한 쿼리문의 개수를 불러와서 예상한 쿼리문의 수와 맞는지 비교합니다.
+설정 build.gradle.kts에 다음과 같은 내용을 dependencies에 추가합니다.
+implementation("net.ttddyy:datasource-proxy:1.7") 그리고 spring-boot에서 proxybean을 생성하게 위해서 BeanPostProcessor를 하나 만들어서 등록해줍니다. 테스트에서만 사용할 거라 적절한 @Profile도 붙여줍니다.
+@Configuration @Profile("test") class DatasourceProxyBeanPostProcessor : BeanPostProcessor { override fun postProcessAfterInitialization(bean: Any, beanName: String): Any?
+</div>
+</div>
+</div>
+</div>
+<div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+<div class="bg-white mb3 pa4 gray overflow-hidden">
+<span class="f6 db">Posts</span>
+<h1 class="f3 near-black">
+<a href=/posts/ways_to_improve_code_quality/ class="link black dim">
+코드 퀄리티를 높이는 방법과 왜 그래야 하는지 by Venkat
+</a>
+</h1>
+<div class="nested-links f5 lh-copy nested-copy-line-height">
+이 글은 (1) Reasons & Ways to Improve Code Quality • Venkat Subramaniam • GOTO 2021 - YouTube 의 저만의 해석 및 감상문입니다.
+[TOC]
+코드 품질을 왜 높여야만 하는가? 코드 품질을 높여야 하는 이유는 순전히 경제적인 이유 때문입니다.
+코드의 품질이 낮아지면 코드의 가독성이 떨어지고 기능의 수정이나 개선을 하기 위해서 어떻게 해야 하는지 알아내기가 점점 어려워집니다. 그렇게 되면 시간을 많이 소요하게 될 것이고, 프로그래머들이 만들어내는 시간 대비 가치는 점점 낮아질 것입니다.
+</div>
+</div>
+</div>
+</div>
+<div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+<div class="bg-white mb3 pa4 gray overflow-hidden">
+<span class="f6 db">Posts</span>
+<h1 class="f3 near-black">
 <a href=/posts/spring_integration_test_ex2/ class="link black dim">
 kotlin-spring 간단한 통합 테스트 설정 2
 </a>
@@ -75,42 +111,6 @@ kotlin-spring 간단한 통합 테스트 설정 2
 기존 상황 testcontainers를 통해 docker 가 설치된 곳이라면 어디서든 독립적으로 통합 테스트를 실행할 수 있도록 만들었습니다. 하지만! 여전히 문제가 있었습니다.
 이전 포스트와 같은 설정으로 돌릴 경우, spring의 컨테이너가 시작하기 위해서 띄우는 db 컨테이너와 별개로 테스트에서 쓰기 위해 컨테이너를 하나 더 띄웁니다.
 목적 docker container를 한번만 띄우고 싶다.
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Posts</span>
-<h1 class="f3 near-black">
-<a href=/posts/blog-update-log/ class="link black dim">
-블로그 UPDATE LOG
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-2021-08-14 ga 적용 hugo는 ga를 내부 template을 통해서 지원해준다.
-영어가 편하신 분은 gohugo#google-analytics 에서 보시길 추천한다.
-theme 이 없다는 가정하에 다음과 같이 적용할 수 있다.
-&lt;head>엘레멘트가 있는 layout html파일에 {{ template "_internal/google_analytics.html" . }} 을 적용하고, 설정파일(.toml 이라고 가정) 에 googleAnalytics = &lt;구글_애널리틱스_속성_ID> 를 입력하면 끝이다.
-그럼에도 몇가지 삽질을 했다.
-theme에서 {{ template "_internal/google_analytics.html" . }}을 적용할 때 production에서만 적용하도록 분기문이 적용되어 있었다. 내가 쓰는 ananke에서 production 판별 조건 중 하나가 HUGO_ENV=production이었는데, HUGO cli에서 -e 로 세팅할 수 있는 줄 알았는데, 아니었다.
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Posts</span>
-<h1 class="f3 near-black">
-<a href=/posts/when_should_beginner_ask/ class="link black dim">
-신입은 언제 질문을 해야 하는 걸까?
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-신입은 언제 질문을 해야 하는 걸까요? 인터넷에서 종종 보는 질문입니다.
-A: 사수가 질문을 듣고 기분이 안나빠질 때&mldr;
-는 농담이고&mldr; 이 질문을 바꿔 말하면, 얼마나 고민 하고 질문을 해야 하는 건가요? 가 됩니다.
-당연하게도, 각자의 선호도는 있을 지언정 명확한 기준은 없습니다. 그러니까 논쟁이 되는 거겠죠. 하지만, 단순히 케바케라는 일반적인 결론을 내기에는 내가 모르는 것에 대해서 얼마나 생각해 봐야 하나&mldr; 는 중요한 주제이고, 신입으로 조직 생활을 해 나가기 위해 자신만의 답이 필요합니다.
 </div>
 </div>
 </div>
