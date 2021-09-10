@@ -1,5 +1,5 @@
 ---
-title: "datasource-proxy를 활용해 n+1 쿼리 방지하기"
+title: "datasource-proxy를 활용해 n+1 쿼리 검증하기"
 date: 2021-09-10T08:27:27+09:00
 draft: false
 categories: ['spring']
