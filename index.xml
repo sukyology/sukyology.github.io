@@ -1,4 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>sukyology</title><link>https://sukyology.github.io/</link><description>Recent content on sukyology</description><generator>Hugo -- gohugo.io</generator><language>ko-kr</language><lastBuildDate>Fri, 10 Sep 2021 08:27:27 +0900</lastBuildDate><atom:link href="https://sukyology.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>datasource-proxy를 활용해 n+1 쿼리 검증하기</title><link>https://sukyology.github.io/posts/test_with_ds_proxy/</link><pubDate>Fri, 10 Sep 2021 08:27:27 +0900</pubDate><guid>https://sukyology.github.io/posts/test_with_ds_proxy/</guid><description>기존 상황 n+1 쿼리를 db 호출 로그를 통해 육안으로 확인하고 있었습니다.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>sukyology</title><link>https://sukyology.github.io/</link><description>Recent content on sukyology</description><generator>Hugo -- gohugo.io</generator><language>ko-kr</language><lastBuildDate>Mon, 18 Jul 2022 22:32:27 +0900</lastBuildDate><atom:link href="https://sukyology.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>Apache Kafka Transaction 101</title><link>https://sukyology.github.io/posts/kafka_transaction/</link><pubDate>Mon, 18 Jul 2022 22:32:27 +0900</pubDate><guid>https://sukyology.github.io/posts/kafka_transaction/</guid><description>서론 exactly-once message delivery 과정에서 어떤 문제가 생길 수 있는지 알아보고 kafka transaction 처리가 어떤 방식으로 그 문제를 해결하는지 알아보자.
+해당 글에서 write-produce와 read-consume은 서로 같은 의미로 썼습니다.
+왜 transaction이 필요할까? 점차 많은 사람들이 카프카를 사용하면서 read-process-write 과정에서 exactly-once 기능의 지원을 필요로 했다. A 메세지의 consume이 B 메세지의 publish라는 필요충분 조건을 만족시켜야 했다는 말이다.
+일반적인 at-least-once 프로듀서와 컨슈머로는 다음 상황들로 인해 exactly-once read-process-write(rpw)을 만족시키는 application을 만들 수 없다.
+producer의 중복 요청 : 이는 위에 언급한 producer에서 멱등성 유지를 위한 sequence 번호 부여로 해결가능하다.</description></item><item><title>datasource-proxy를 활용해 n+1 쿼리 검증하기</title><link>https://sukyology.github.io/posts/test_with_ds_proxy/</link><pubDate>Fri, 10 Sep 2021 08:27:27 +0900</pubDate><guid>https://sukyology.github.io/posts/test_with_ds_proxy/</guid><description>기존 상황 n+1 쿼리를 db 호출 로그를 통해 육안으로 확인하고 있었습니다.
 목적 테스트를 통해서 n+1 쿼리를 빠르게 방지할 수 있는 방법을 찾고 싶습니다.
 해결 방안 datasource-proxy 라이브러리를 통해 실행한 쿼리문의 개수를 불러와서 예상한 쿼리문의 수와 맞는지 비교합니다.
 설정 build.gradle.kts에 다음과 같은 내용을 dependencies에 추가합니다.
@@ -9,7 +13,8 @@ implementation(&amp;#34;net.ttddyy:datasource-proxy:1.7&amp;#34;) 그리고 spri
 코드의 품질이 낮아지면 코드의 가독성이 떨어지고 기능의 수정이나 개선을 하기 위해서 어떻게 해야 하는지 알아내기가 점점 어려워집니다. 그렇게 되면 시간을 많이 소요하게 될 것이고, 프로그래머들이 만들어내는 시간 대비 가치는 점점 낮아질 것입니다.</description></item><item><title>kotlin-spring 간단한 통합 테스트 설정 2</title><link>https://sukyology.github.io/posts/spring_integration_test_ex2/</link><pubDate>Thu, 26 Aug 2021 08:27:27 +0900</pubDate><guid>https://sukyology.github.io/posts/spring_integration_test_ex2/</guid><description>이전 포스트에서 testcontainers를 이용한 스프링 통합 테스트를 다뤘습니다. 이 포스트는 해당 포스트에서 작성한 환경 설정에서 더 나아가는 환경 설정을 다뤘습니다.
 기존 상황 testcontainers를 통해 docker 가 설치된 곳이라면 어디서든 독립적으로 통합 테스트를 실행할 수 있도록 만들었습니다. 하지만! 여전히 문제가 있었습니다.
 이전 포스트와 같은 설정으로 돌릴 경우, spring의 컨테이너가 시작하기 위해서 띄우는 db 컨테이너와 별개로 테스트에서 쓰기 위해 컨테이너를 하나 더 띄웁니다.
-목적 docker container를 한번만 띄우고 싶다.</description></item><item><title>블로그 UPDATE LOG</title><link>https://sukyology.github.io/posts/blog-update-log/</link><pubDate>Sat, 14 Aug 2021 12:32:27 +0900</pubDate><guid>https://sukyology.github.io/posts/blog-update-log/</guid><description>2021-08-14 ga 적용 hugo는 ga를 내부 template을 통해서 지원해준다.
+목적 docker container를 한번만 띄우고 싶다.
+해결 방법 youtube 영상을 보고 테스트에서 띄운 도커 컨테이너의 설정을 spring 설정에 동적으로 할당하는 방법이 있었습니다.</description></item><item><title>블로그 UPDATE LOG</title><link>https://sukyology.github.io/posts/blog-update-log/</link><pubDate>Sat, 14 Aug 2021 12:32:27 +0900</pubDate><guid>https://sukyology.github.io/posts/blog-update-log/</guid><description>2021-08-14 ga 적용 hugo는 ga를 내부 template을 통해서 지원해준다.
 영어가 편하신 분은 gohugo#google-analytics 에서 보시길 추천한다.
 theme 이 없다는 가정하에 다음과 같이 적용할 수 있다.
 &amp;lt;head&amp;gt;엘레멘트가 있는 layout html파일에 {{ template &amp;quot;_internal/google_analytics.html&amp;quot; . }} 을 적용하고, 설정파일(.toml 이라고 가정) 에 googleAnalytics = &amp;lt;구글_애널리틱스_속성_ID&amp;gt; 를 입력하면 끝이다.
@@ -23,4 +28,4 @@ A: 사수가 질문을 듣고 기분이 안나빠질 때&amp;hellip;
 기존 상황 로컬 DB를 사용하여 스프링 통합 테스트를 하고 있었다.
 개발망에 서버를 올리고, 추가적인 테스트를 하고 있었다.
 목적 코너케이스나 데이터 정합성까진 아니더라도 기본적인 api의 동작 여부는 코드가 변경될 때 마다 자동으로 체크하고 싶다.
-해결 방법 db의 멱등성 부여 docker container를 테스트마다 생성함.</description></item></channel></rss>
+해결 방법 db의 멱등성 부여 docker container를 테스트마다 생성함. 자동으로 체크 github actions를 통해 풀리퀘나 푸시가 일어날 때 마다 테스트코드 실행 api 동작 여부 체크 testResttemplate으로 실행 spring 서버에 api 요청 구체적인 설정 dependency 설정 build.</description></item></channel></rss>
